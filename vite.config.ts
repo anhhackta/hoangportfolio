@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/hoang-quangnam-portfolio-glow/',
   plugins: [
     react(),
     mode === 'development' &&
