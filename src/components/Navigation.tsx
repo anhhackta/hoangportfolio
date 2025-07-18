@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Code, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Code, Briefcase, Mail, Volume2, VolumeX } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { Button } from '@/components/ui/button';
 
-const Navigation = () => {
+interface NavigationProps {
+  isPlaying?: boolean;
+  onToggleMusic?: () => void;
+}
+
+const Navigation = ({ isPlaying = false, onToggleMusic }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,20 +80,39 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                     activeSection === (item.href.replace('#', '') || 'home')
-                      ? 'bg-primary/20 text-primary border border-primary/30'
+                      ? 'bg-primary/20 text-primary border border-primary/30 animate-pulse'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                   }`}
                 >
                   {item.name}
                 </button>
               ))}
+              
+              {/* Music Toggle */}
+              {onToggleMusic && (
+                <Button
+                  onClick={onToggleMusic}
+                  variant="ghost"
+                  size="sm"
+                  className="h-9 w-9 rounded-full border border-border/50 hover:bg-accent/50"
+                >
+                  {isPlaying ? (
+                    <Volume2 className="h-4 w-4 text-primary" />
+                  ) : (
+                    <VolumeX className="h-4 w-4" />
+                  )}
+                </Button>
+              )}
+              
+              {/* Theme Toggle */}
+              <ThemeToggle />
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,6 +146,31 @@ const Navigation = () => {
                     <span className="font-medium">{item.name}</span>
                   </button>
                 ))}
+                
+                {/* Mobile Controls */}
+                <div className="flex gap-2 px-4 pt-2">
+                  {onToggleMusic && (
+                    <Button
+                      onClick={onToggleMusic}
+                      variant="ghost"
+                      size="sm"
+                      className="flex-1 gap-2"
+                    >
+                      {isPlaying ? (
+                        <>
+                          <Volume2 className="h-4 w-4" />
+                          Music On
+                        </>
+                      ) : (
+                        <>
+                          <VolumeX className="h-4 w-4" />
+                          Music Off
+                        </>
+                      )}
+                    </Button>
+                  )}
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </div>
