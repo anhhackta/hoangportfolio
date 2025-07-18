@@ -62,7 +62,27 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/122e2610-2432-4f59-b5db-5cb737dea2bf) and click on Share -> Publish.
+### GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages. To deploy:
+
+1. **Enable GitHub Pages**: 
+   - Go to your repository Settings > Pages
+   - Set Source to "GitHub Actions"
+
+2. **Automatic Deployment**: 
+   - The site will automatically deploy when you push to the `main` branch
+   - GitHub Actions will build and deploy your site
+   - Your site will be available at: `https://[username].github.io/hoang-quangnam-portfolio-glow/`
+
+3. **Manual Deployment**: 
+   - Go to the "Actions" tab in your repository
+   - Click "Deploy to GitHub Pages" workflow
+   - Click "Run workflow" to manually trigger a deployment
+
+### Alternative: Lovable
+
+You can also deploy via [Lovable](https://lovable.dev/projects/122e2610-2432-4f59-b5db-5cb737dea2bf) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
