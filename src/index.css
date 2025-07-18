@@ -6,7 +6,75 @@
 
 @layer base {
   :root {
-    /* Core Theme Colors */
+    /* Light Mode - Clean & Professional */
+    --background: 210 40% 98%;
+    --foreground: 210 40% 5%;
+
+    --card: 210 40% 95%;
+    --card-foreground: 210 40% 10%;
+
+    --popover: 210 40% 95%;
+    --popover-foreground: 210 40% 10%;
+
+    /* Primary - Tech Purple/Blue (Darker for light mode) */
+    --primary: 258 90% 55%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 258 90% 65%;
+
+    /* Secondary - Energetic Cyan (Darker for light mode) */
+    --secondary: 191 85% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Accent - Game Green (Darker for light mode) */
+    --accent: 142 70% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 10% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 85%;
+    --input: 210 40% 85%;
+    --ring: 258 90% 55%;
+
+    --radius: 1rem;
+
+    /* Game Development Specific Colors - Light Mode */
+    --pixel-green: 142 70% 50%;
+    --neon-blue: 191 85% 45%;
+    --cyber-purple: 258 90% 55%;
+    --warning-orange: 25 90% 55%;
+
+    /* Gradients - Lighter versions */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 40% 92%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.2), transparent 70%);
+
+    /* Shadows & Effects - Lighter for light mode */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 8px 32px hsl(210 40% 80% / 0.3);
+    --shadow-interactive: 0 4px 20px hsl(var(--primary) / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: all 0.3s ease-in-out;
+
+    --sidebar-background: 210 40% 96%;
+    --sidebar-foreground: 210 40% 15%;
+    --sidebar-primary: 258 90% 55%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 90%;
+    --sidebar-accent-foreground: 210 40% 15%;
+    --sidebar-border: 210 40% 85%;
+    --sidebar-ring: 258 90% 55%;
+  }
+
+  .dark {
+    /* Dark Mode - Original Game Development Colors */
     --background: 222 47% 4%;
     --foreground: 210 40% 98%;
 
@@ -39,83 +107,31 @@
     --input: 224 47% 12%;
     --ring: 258 90% 66%;
 
-    --radius: 1rem;
-
-    /* Game Development Specific Colors */
+    /* Game Development Specific Colors - Dark Mode */
     --pixel-green: 142 76% 65%;
     --neon-blue: 191 95% 68%;
     --cyber-purple: 258 90% 66%;
     --warning-orange: 25 95% 65%;
 
-    /* Gradients */
+    /* Gradients - Original dark theme */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(224 47% 8%));
     --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.3), transparent 70%);
 
-    /* Shadows & Effects */
+    /* Shadows & Effects - Original dark theme */
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
     --shadow-card: 0 8px 32px hsl(222 47% 2% / 0.5);
     --shadow-interactive: 0 4px 20px hsl(var(--primary) / 0.2);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --transition-glow: all 0.3s ease-in-out;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 222 47% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 258 90% 66%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 224 47% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 224 47% 12%;
+    --sidebar-ring: 258 90% 66%;
   }
 }
 
@@ -208,24 +224,7 @@
   }
 }
 
-/* Light Mode Overrides */
-.light {
-  --background: 210 40% 98%;
-  --foreground: 210 40% 5%;
-  --card: 210 40% 95%;
-  --card-foreground: 210 40% 10%;
-  --popover: 210 40% 95%;
-  --popover-foreground: 210 40% 10%;
-  --muted: 210 40% 90%;
-  --muted-foreground: 210 10% 40%;
-  --border: 210 40% 85%;
-  --input: 210 40% 85%;
-  --accent: 210 40% 90%;
-  --accent-foreground: 210 40% 10%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --ring: 258 90% 66%;
-}
+/* Light Mode Overrides - Removed duplicate, using :root definition above */
 
 /* Keyframes */
 @keyframes float {
