@@ -75,15 +75,15 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hoang.nguyenba@vtc.edu.vn",
-      href: "mailto:hoang.nguyenba@vtc.edu.vn",
+      value: "hoangnb.144010123003@vtc.edu.vn",
+      href: "mailto:hoangnb.144010123003@vtc.edu.vn",
       color: "text-primary"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+84 123 456 789",
-      href: "tel:+84123456789",
+      value: "+84 779 526 613",
+      href: "tel:+84779526613",
       color: "text-secondary"
     },
     {
@@ -99,19 +99,19 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/anhhackta/",
       color: "hover:text-foreground"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/hoangx2002/",
       color: "hover:text-neon-blue"
     },
     {
       icon: MessageSquare,
       label: "Discord",
-      href: "https://discord.com",
+      href: "https://discord.gg/3J2nemTtDq",
       color: "hover:text-cyber-purple"
     }
   ];
