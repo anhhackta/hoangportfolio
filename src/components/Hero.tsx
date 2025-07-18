@@ -81,13 +81,13 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex gap-4 pt-4">
               <a 
-                href="mailto:hoang@example.com" 
+                href="mailto:bahoangcran@gmail.com" 
                 className="p-3 rounded-full bg-muted/50 hover:bg-primary/20 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/anhhackta/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-muted/50 hover:bg-primary/20 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
@@ -95,7 +95,7 @@ const Hero = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/hoangx2002/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-muted/50 hover:bg-primary/20 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
