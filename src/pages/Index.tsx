@@ -8,13 +8,14 @@ import Contact from '@/components/Contact';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { MusicDialog } from '@/components/MusicDialog';
 import { BackToTop } from '@/components/BackToTop';
+import { MusicPlayer } from '@/components/MusicPlayer';
 import { useBackgroundMusic } from '@/hooks/useBackgroundMusic';
 import { Toaster } from '@/components/ui/toaster';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showMusicDialog, setShowMusicDialog] = useState(false);
-  const { isPlaying, hasInteracted, play, toggle } = useBackgroundMusic();
+  const { isPlaying, hasInteracted, play, toggle, replay } = useBackgroundMusic();
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -63,6 +64,12 @@ const Index = () => {
 
       {/* Additional Components */}
       <BackToTop />
+      <MusicPlayer 
+        isPlaying={isPlaying}
+        onToggle={toggle}
+        onReplay={replay}
+        hasInteracted={hasInteracted}
+      />
       <MusicDialog 
         isOpen={showMusicDialog} 
         onClose={handleMusicChoice} 

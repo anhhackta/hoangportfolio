@@ -7,7 +7,7 @@ export const useBackgroundMusic = () => {
 
   const initializeAudio = useCallback(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('/music/andromedik-take-me.mp3');
+      audioRef.current = new Audio('/music/new-song.mp3');
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }
@@ -41,11 +41,22 @@ export const useBackgroundMusic = () => {
     }
   }, [isPlaying, pause, play]);
 
+  const replay = useCallback(() => {
+    initializeAudio();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      if (!isPlaying) {
+        play();
+      }
+    }
+  }, [initializeAudio, isPlaying, play]);
+
   return {
     isPlaying,
     hasInteracted,
     play,
     pause,
     toggle,
+    replay,
   };
 };

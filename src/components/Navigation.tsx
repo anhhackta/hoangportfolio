@@ -85,13 +85,16 @@ const Navigation = ({ isPlaying = false, onToggleMusic }: NavigationProps) => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+                  className={`px-4 py-2 rounded-full transition-all duration-300 font-medium relative ${
                     activeSection === (item.href.replace('#', '') || 'home')
-                      ? 'bg-primary/20 text-primary border border-primary/30 animate-pulse'
+                      ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                   }`}
                 >
                   {item.name}
+                  {activeSection === (item.href.replace('#', '') || 'home') && (
+                    <span className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse" />
+                  )}
                 </button>
               ))}
               
