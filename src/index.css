@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System - Game Development Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Theme Colors */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 47% 6%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 47% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary - Tech Purple/Blue */
+    --primary: 258 90% 66%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 258 90% 76%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Energetic Cyan */
+    --secondary: 191 95% 68%;
+    --secondary-foreground: 222 47% 4%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Game Green */
+    --accent: 142 76% 65%;
+    --accent-foreground: 222 47% 4%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 224 47% 10%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 224 47% 12%;
+    --input: 224 47% 12%;
+    --ring: 258 90% 66%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Game Development Specific Colors */
+    --pixel-green: 142 76% 65%;
+    --neon-blue: 191 95% 68%;
+    --cyber-purple: 258 90% 66%;
+    --warning-orange: 25 95% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(224 47% 8%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.3), transparent 70%);
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(222 47% 2% / 0.5);
+    --shadow-interactive: 0 4px 20px hsl(var(--primary) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: all 0.3s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +125,106 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
+}
+
+@layer components {
+  /* Interactive Elements */
+  .hero-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-primary-foreground 
+           font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-glow transform transition-all 
+           duration-300 hover:scale-105 hover:-translate-y-1;
+  }
+
+  .hero-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-secondary to-accent opacity-0 transition-opacity duration-300;
+  }
+
+  .hero-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .hero-button > * {
+    @apply relative z-10;
+  }
+
+  .card-glow {
+    @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-sm border border-border/50 
+           rounded-3xl p-6 shadow-card hover:shadow-glow transition-all duration-300 
+           hover:border-primary/30 hover:-translate-y-2;
+  }
+
+  .text-glow {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .skill-tag {
+    @apply bg-gradient-to-r from-muted to-muted/50 border border-border/30 text-foreground 
+           px-4 py-2 rounded-full text-sm font-medium hover:border-primary/50 
+           hover:shadow-interactive transition-all duration-300 cursor-pointer 
+           hover:scale-105 hover:-translate-y-1;
+  }
+
+  /* Animations */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .fade-in-up {
+    @apply opacity-0 translate-y-10;
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Scroll Animations */
+  .scroll-fade {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .scroll-fade.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  .gradient-border {
+    @apply relative overflow-hidden rounded-2xl;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 p-[2px] bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  100% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
