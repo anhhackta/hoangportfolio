@@ -53,7 +53,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center space-y-4">
             <p className="text-muted-foreground">
-              © 2024 Nguyễn Bá Hoàng. Crafted with passion for game development.
+              © 2025 Nguyễn Bá Hoàng. Crafted with passion for game development.
             </p>
             <p className="text-sm text-muted-foreground">
               Built with React, TypeScript, and Tailwind CSS
