@@ -73,7 +73,7 @@ This project is configured for automatic deployment to GitHub Pages. To deploy:
 2. **Automatic Deployment**: 
    - The site will automatically deploy when you push to the `main` branch
    - GitHub Actions will build and deploy your site
-   - Your site will be available at: `https://[username].github.io/hoang-quangnam-portfolio-glow/`
+   - Your site will be available at: `https://[username].github.io/hoangportfolio/`
 
 3. **Manual Deployment**: 
    - Go to the "Actions" tab in your repository
