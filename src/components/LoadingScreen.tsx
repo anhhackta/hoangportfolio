@@ -14,6 +14,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     'Loading Assets...',
     'Compiling Shaders...',
     'Starting Portfolio...',
+    'Hoàng đang ngủ...',
   ];
 
   const icons = [Code2, Gamepad2, Cpu];
