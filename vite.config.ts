@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/hoangportfolio/', // << Thêm dòng này
+  base: '/', // Fixed for custom domain (portfolio.bahoang.online)
   server: {
     host: "::",
     port: 8080,
