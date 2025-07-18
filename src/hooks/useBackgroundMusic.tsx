@@ -8,6 +8,7 @@ export const useBackgroundMusic = () => {
   const initializeAudio = useCallback(() => {
     if (!audioRef.current) {
       audioRef.current = new Audio('/music/TakeNCS.mp3');
+      console.log('Initializing audio:', audioRef.current.src);
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }
@@ -17,11 +18,15 @@ export const useBackgroundMusic = () => {
     initializeAudio();
     if (audioRef.current && !isPlaying) {
       try {
+        console.log('Attempting to play audio...');
         await audioRef.current.play();
+        console.log('Audio playing successfully');
         setIsPlaying(true);
         setHasInteracted(true);
       } catch (error) {
         console.error('Error playing audio:', error);
+        console.error('Audio source:', audioRef.current?.src);
+        console.error('Audio readyState:', audioRef.current?.readyState);
       }
     }
   }, [initializeAudio, isPlaying]);
