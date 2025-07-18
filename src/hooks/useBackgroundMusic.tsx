@@ -7,7 +7,7 @@ export const useBackgroundMusic = () => {
 
   const initializeAudio = useCallback(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('/music/new-song.mp3');
+      audioRef.current = new Audio('/music/TakeNCS.mp3');
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }

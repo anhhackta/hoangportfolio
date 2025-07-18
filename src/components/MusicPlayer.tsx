@@ -17,14 +17,14 @@ export const MusicPlayer = ({
   if (!hasInteracted) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
-      <div className="bg-background/90 backdrop-blur-lg border border-border/50 rounded-2xl p-3 shadow-lg">
+    <div className="fixed bottom-6 left-6 z-50 transition-transform duration-300 ease-in-out hover:scale-105">
+      <div className="bg-background/95 backdrop-blur-lg border border-border/50 rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-2">
           <Button
             onClick={onToggle}
             size="sm"
             variant="ghost"
-            className="h-8 w-8 rounded-full hover:bg-primary/20"
+            className="h-8 w-8 rounded-lg hover:bg-primary/20 transition-colors"
           >
             {isPlaying ? (
               <Pause className="h-4 w-4 text-primary" />
@@ -37,9 +37,9 @@ export const MusicPlayer = ({
             onClick={onReplay}
             size="sm"
             variant="ghost"
-            className="h-8 w-8 rounded-full hover:bg-primary/20"
+            className="h-8 w-8 rounded-lg hover:bg-primary/20 transition-colors"
           >
-            <RotateCcw className="h-4 w-4 text-muted-foreground hover:text-primary" />
+            <RotateCcw className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors" />
           </Button>
           
           <div className="w-px h-4 bg-border/50 mx-1" />
@@ -50,7 +50,7 @@ export const MusicPlayer = ({
             ) : (
               <VolumeX className="h-3 w-3 text-muted-foreground" />
             )}
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs text-muted-foreground font-medium">
               {isPlaying ? 'ON' : 'OFF'}
             </span>
           </div>
