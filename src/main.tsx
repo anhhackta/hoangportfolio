@@ -7,7 +7,7 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/hoang-quangnam-portfolio-glow">
+    <BrowserRouter basename="/hoangportfolio">
       <ThemeProvider defaultTheme="dark">
         <App />
       </ThemeProvider>
