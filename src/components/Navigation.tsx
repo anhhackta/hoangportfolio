@@ -27,20 +27,25 @@ const Navigation = ({ isPlaying = false, onToggleMusic }: NavigationProps) => {
 
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.replace('#', '') || 'home');
-      const currentSection = sections.find(section => {
+      let currentSection = 'home'; // Default to home
+      
+      // Check each section to find the active one
+      for (const section of sections) {
         const element = section === 'home' ? 
-          document.body : 
+          null : // Don't check body for home
           document.getElementById(section);
+        
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          // Section is active if it's in the top portion of viewport
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+            break;
+          }
         }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
+      
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
