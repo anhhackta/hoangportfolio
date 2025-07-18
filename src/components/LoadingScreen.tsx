@@ -10,7 +10,6 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   const [currentText, setCurrentText] = useState(0);
 
   const loadingTexts = [
-    'Initializing Game Engine...',
     'Loading Assets...',
     'Compiling Shaders...',
     'Starting Portfolio...',
