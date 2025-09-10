@@ -15,7 +15,7 @@ import { Toaster } from '@/components/ui/toaster';
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showMusicDialog, setShowMusicDialog] = useState(false);
-  const { isPlaying, hasInteracted, play, toggle, replay } = useBackgroundMusic();
+  const { isPlaying, hasInteracted, play, toggle, replay, markAsInteracted } = useBackgroundMusic();
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -27,6 +27,8 @@ const Index = () => {
 
   const handleMusicChoice = (allowMusic: boolean) => {
     setShowMusicDialog(false);
+    // Mark as interacted regardless of choice so user can toggle music later
+    markAsInteracted(true);
     if (allowMusic) {
       play();
     }

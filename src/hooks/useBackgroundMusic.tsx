@@ -56,6 +56,10 @@ export const useBackgroundMusic = () => {
     }
   }, [initializeAudio, isPlaying, play]);
 
+  const markAsInteracted = useCallback((value: boolean) => {
+    setHasInteracted(value);
+  }, []);
+
   return {
     isPlaying,
     hasInteracted,
@@ -63,5 +67,6 @@ export const useBackgroundMusic = () => {
     pause,
     toggle,
     replay,
+    markAsInteracted,
   };
 };

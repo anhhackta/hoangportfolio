@@ -55,7 +55,7 @@ const Projects = () => {
     {
       title: "Space Go",
       category: "Endless runner",
-      description: "To increase the difficulty of an endless runner genre needs something new and crazy,
+      description: "To increase the difficulty of an endless runner genre needs something new and crazy.",
       tech: ["Unity", "C#", "AI Navigation", "Photoshop"],
       status: "Planning",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center",
