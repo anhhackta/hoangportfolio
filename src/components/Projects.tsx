@@ -26,37 +26,37 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Mystic Realms",
-      category: "RPG Adventure",
-      description: "An immersive 3D RPG featuring dynamic combat, character progression, and a rich fantasy world. Built with Unity and C#.",
-      tech: ["Unity", "C#", "Blender", "Photoshop"],
+      title: "Final BattleFields",
+      category: "Casual,History",
+      description: "A game about the historical resistance of the Vietnamese nation through major wars",
+      tech: ["Cocos-2dx", "C++", "Spine", "Photoshop"],
       status: "In Development",
       image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop&crop=center",
       color: "from-primary to-secondary"
     },
     {
-      title: "Neon Runner",
-      category: "Arcade Action",
-      description: "Fast-paced cyberpunk endless runner with procedural level generation and electronic soundtrack integration.",
-      tech: ["Unity", "C#", "Shader Graph", "FMOD"],
+      title: "Broto",
+      category: "Roguelike",
+      description: "Inspired by Brotato as a never-ending battle royal online game.",
+      tech: ["Unity", "C#", "Fusion", "Cursor"],
       status: "Completed",
       image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
       color: "from-secondary to-accent"
     },
     {
-      title: "Puzzle Matrix",
-      category: "Logic Puzzle",
-      description: "Mind-bending 3D puzzle game with gravity manipulation mechanics and minimalist aesthetic design.",
-      tech: ["Unreal Engine", "C++", "Blueprint"],
+      title: "AntKnow",
+      category: "Monopoly",
+      description: "An innovative and exciting billionaire board game with exciting tactical features",
+      tech: ["Unity", "C#", "Firebase", "Cursor"],
       status: "Prototype",
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop&crop=center",
       color: "from-accent to-cyber-purple"
     },
     {
-      title: "Village Simulator",
-      category: "Strategy Simulation",
-      description: "Medieval village building and management game with realistic economic systems and weather effects.",
-      tech: ["Unity", "C#", "AI Navigation", "Custom Tools"],
+      title: "Space Go",
+      category: "Endless runner",
+      description: "To increase the difficulty of an endless runner genre needs something new and crazy,
+      tech: ["Unity", "C#", "AI Navigation", "Photoshop"],
       status: "Planning",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center",
       color: "from-cyber-purple to-warning-orange"
