@@ -27,35 +27,35 @@ const Skills = () => {
       icon: Code,
       title: "Programming Languages",
       color: "from-primary to-primary-glow",
-      skills: ["C#", "C++", "JavaScript", "Python", "TypeScript", "Java"]
+      skills: ["C#", "C++", "JavaScript", "Python", "TypeScript", "HTML"]
     },
     {
       icon: Gamepad2,
       title: "Game Engines",
       color: "from-secondary to-neon-blue",
-      skills: ["Unity", "Unreal Engine", "Godot", "GameMaker Studio"]
+      skills: ["Unity", "Cocos-2dx", "Godot", "GameMaker Studio"]
     },
     {
       icon: Wrench,
       title: "Development Tools",
       color: "from-accent to-pixel-green",
-      skills: ["Visual Studio", "Git", "Blender", "Photoshop", "Figma"]
+      skills: ["Visual Studio", "Git", "Trello", "Photoshop", "Figma"]
     },
     {
       icon: Palette,
       title: "Specializations",
       color: "from-cyber-purple to-warning-orange",
-      skills: ["Game Design", "3D Modeling", "UI/UX", "Level Design", "Scripting"]
+      skills: ["Game Design", "Scripting", "UI/UX", "Level Design"]
     }
   ];
 
   const proficiencyLevels = [
-    { name: "C#", level: 85, category: "programming" },
+    { name: "C#", level: 75, category: "programming" },
     { name: "Unity", level: 90, category: "engine" },
     { name: "C++", level: 75, category: "programming" },
-    { name: "Unreal Engine", level: 70, category: "engine" },
-    { name: "JavaScript", level: 80, category: "programming" },
-    { name: "Game Design", level: 85, category: "design" }
+    { name: "TypeScript", level: 85, category: "engine" },
+    { name: "HTML", level: 80, category: "programming" },
+    { name: "Game Design", level: 90, category: "design" }
   ];
 
   return (
@@ -145,7 +145,7 @@ const Skills = () => {
                 🥽 VR/AR Development
               </span>
               <span className="px-4 py-2 bg-gradient-to-r from-cyber-purple/20 to-warning-orange/20 rounded-full text-sm border border-cyber-purple/30">
-                ⚡ Advanced Shaders
+                ⚡ Multi Buiding
               </span>
             </div>
           </div>
